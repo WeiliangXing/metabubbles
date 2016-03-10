@@ -31,7 +31,8 @@ npm install babel-preset-stage-0 --save-dev
 19. introduce random into circles.service
 20. eliminate dup of width/height into main.js
 21. add  update() to service
-22. 
+22. make collision meta.
+
 
 ## Reference:
 http://teropa.info/blog/2016/02/28/metabubbles-generative-art-with-angular-2.html#table-of-contents

@@ -1,6 +1,7 @@
 
 import {Component} from 'angular2/core';
 import {CircleComponent} from './circle.component';
+import {Circles} from './circles.service';
 
 @Component({
   selector: 'mb-canvas',
@@ -8,17 +9,17 @@ import {CircleComponent} from './circle.component';
     <svg viewBox="0 0 900 500"
          preserveAspectRatio="xMidYMid meet">
     <svg:g mb-circle
-        *ngFor="#circle of circles"
+        *ngFor="#circle of circles.circles"
         [circle]="circle" />
     </svg>
   `,
   styles: [require('css!./canvas.component.css').toString()],
-  directives: [CircleComponent]
+  directives: [CircleComponent],
+  providers: [Circles]
 })
 export class CanvasComponent {
-  circles = [
-    {x: 50, y: 50, radius: 10},
-    {x: 75, y: 75, radius: 20},
-    {x: 115, y: 115, radius: 30}
-  ];
+  static parameters = [Circles];
+  constructor(circles) {
+    this.circles = circles;
+  }
 }

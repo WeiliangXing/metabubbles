@@ -27,7 +27,7 @@ npm install babel-preset-stage-0 --save-dev
 15. create circle.component.js
 16. install css loader npm install css-loader --save-dev
 17.  touch canvas.component.css, circle.component.css
-18.
+18. touch circle.service.js, inject into canvas.component.js
 
 
 ## Reference:

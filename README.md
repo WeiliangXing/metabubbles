@@ -30,7 +30,7 @@ npm install babel-preset-stage-0 --save-dev
 18. touch circle.service.js, inject into canvas.component.js
 19. introduce random into circles.service
 20. eliminate dup of width/height into main.js
-21. add  update() to service
+21. add update() to service
 22. make collision meta.
 23. add color
 24. to improve performance, we could do onPush Detection;

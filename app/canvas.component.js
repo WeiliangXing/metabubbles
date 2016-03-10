@@ -6,11 +6,11 @@ import {Circles} from './circles.service';
 @Component({
   selector: 'mb-canvas',
   template: `
-    <svg viewBox="0 0 900 500"
+    <svg [attr.viewBox]="getViewBox()"
          preserveAspectRatio="xMidYMid meet">
-    <svg:g mb-circle
-        *ngFor="#circle of circles.circles"
-        [circle]="circle" />
+      <svg:g mb-circle
+             *ngFor="#circle of circles"
+             [circle]="circle" />
     </svg>
   `,
   styles: [require('css!./canvas.component.css').toString()],
@@ -18,8 +18,16 @@ import {Circles} from './circles.service';
   providers: [Circles]
 })
 export class CanvasComponent {
-  static parameters = [Circles];
-  constructor(circles) {
-    this.circles = circles;
+
+  static parameters = [Circles, 'canvasWidth', 'canvasHeight'];
+  constructor(circles, canvasWidth, canvasHeight) {
+    this.circles = circles.circles;
+    this.width = canvasWidth;
+    this.height = canvasHeight;
   }
+
+  getViewBox() {
+    return `0 0 ${this.width} ${this.height}`;
+  }
+
 }

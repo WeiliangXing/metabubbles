@@ -1,0 +1,26 @@
+{
+  "name": "metabubbles",
+  "version": "1.0.0",
+  "description": "This is an experimental app in ng-2 with Javascript for metabubbles effect presentation.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeiliangXing/metabubbles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeiliangXing/metabubbles/issues"
+  },
+  "homepage": "https://github.com/WeiliangXing/metabubbles#readme",
+  "devDependencies": {
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

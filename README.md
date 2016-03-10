@@ -23,6 +23,11 @@ npm install babel-preset-stage-0 --save-dev
 11. modify js/polyfills.js
 12.create js/canvas.component.js
 13. modify app/main.js
+14. add svg to CanvasComponent
+15. create circle.component.js
+16. install css loader npm install css-loader --save-dev
+17.  touch canvas.component.css, circle.component.css
+18.
 
 
 ## Reference:

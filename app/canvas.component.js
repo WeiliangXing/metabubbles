@@ -11,7 +11,11 @@ import {Circles} from './circles.service';
          (click)="toggleRunning()">
       <svg:g mb-circle
              *ngFor="#circle of circles"
-             [circle]="circle" />
+            [x]="circle.x"
+            [y]="circle.y"
+            [radius]="circle.radius"
+            [visible]="circle.visible"
+            [color]="circle.color" />
     </svg>
   `,
   styles: [require('css!./canvas.component.css').toString()],

@@ -32,7 +32,42 @@ npm install babel-preset-stage-0 --save-dev
 20. eliminate dup of width/height into main.js
 21. add  update() to service
 22. make collision meta.
-
+23. add color
+24. to improve performance, we could do onPush Detection;
+25. to improve performance, we could also do in product mode:
+in app/prod.js
+```javascript
+import {enableProdMode} from 'angular2/core';
+enableProdMode();
+```
+In webpack.prod.config.js
+```javascript
+module.exports = {
+  entry: ['./app/polyfills.js', './app/prod.js', './app/main.js'],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'stage-0'],
+        plugins: ['transform-decorators-legacy']
+      }
+    }]
+  },
+  output: {
+    path: __dirname,
+    filename: 'bundle.js'
+  }
+};
+```
+In package.json
+```javascript
+"scripts": {
+  "build": "webpack --config webpack.prod.config.js",
+  "start": "webpack-dev-server --inline"
+},
+```
 
 ## Reference:
 http://teropa.info/blog/2016/02/28/metabubbles-generative-art-with-angular-2.html#table-of-contents

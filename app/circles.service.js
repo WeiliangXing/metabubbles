@@ -10,7 +10,8 @@ export class Circles {
     this.circleMap = new Map();
     this.sourceCircles = [];
     this.circles = [];
-    for (let i=0 ; i<5 ; i++) {
+    this.timeStep = 0;
+    for (let i=0 ; i<100 ; i++) {
       this.sourceCircles.push({
         x: this.randInt(canvasWidth),
         y: this.randInt(canvasHeight),
@@ -28,6 +29,7 @@ export class Circles {
   }
 
   update() {
+    this.timeStep++;
     for (const sourceCircle of this.sourceCircles) {
       this.moveCircle(sourceCircle); // move sources circles, not shown yet
     }
@@ -53,7 +55,14 @@ export class Circles {
           this.circleMap.set(pair, collisionCircle);
         }
         // when collision occur, visible
-        collisionCircle.visible = true;
+        // and add color
+        if (!collisionCircle.visible) {
+          collisionCircle.visible = true;
+          const red = this.timeStep % 256;
+          const green = (this.timeStep + 85) % 256;
+          const blue = (this.timeStep + 85 + 85) % 256;
+          collisionCircle.color = `rgba(${red}, ${green}, ${blue}, 0.5)`;
+        }
       }
       // when collision finished, invisible
       else if (this.circleMap.has(pair)) {

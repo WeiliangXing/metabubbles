@@ -30,7 +30,8 @@ npm install babel-preset-stage-0 --save-dev
 18. touch circle.service.js, inject into canvas.component.js
 19. introduce random into circles.service
 20. eliminate dup of width/height into main.js
-21. 
+21. add  update() to service
+22. 
 
 ## Reference:
 http://teropa.info/blog/2016/02/28/metabubbles-generative-art-with-angular-2.html#table-of-contents

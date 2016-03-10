@@ -10,7 +10,9 @@ export class Circles {
       this.circles.push({
         x: this.randInt(canvasWidth),
         y: this.randInt(canvasHeight),
-        radius: this.randInt(100) + 10
+        radius: this.randInt(100) + 10,
+        xMove: this.randInt(5) - 2, // -2..2
+        yMove: this.randInt(5) - 2  // -2..2
       });
     }
   }
@@ -18,4 +20,13 @@ export class Circles {
   randInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+  update() {
+    for (const circle of this.circles) {
+      circle.x += circle.xMove;
+      circle.y += circle.yMove;
+    }
+    console.log("update!!!");
+  }
+
 }

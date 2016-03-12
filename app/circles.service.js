@@ -11,7 +11,7 @@ export class Circles {
     this.sourceCircles = [];
     this.circles = [];
     this.timeStep = 0;
-    for (let i=0 ; i<100 ; i++) {
+    for (let i=0 ; i<50 ; i++) {
       this.sourceCircles.push({
         x: this.randInt(canvasWidth),
         y: this.randInt(canvasHeight),

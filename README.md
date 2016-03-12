@@ -1,6 +1,5 @@
 This is an experimental app in ng-2 with Javascript for metabubbles effect presentation.
 
-
 ## Steps:
 1. in the new empty directory, npm init -y to create package.json
 2. npm install webpack webpack-dev-server --save-dev
